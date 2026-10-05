@@ -1,0 +1,18 @@
+@model WebApplication5.Models.DiscountViewModel
+
+<form asp-controller="Discount" asp-action="Index" method="post">
+    <div>
+        <label>Ціна товару:</label>
+        <input asp-for="Price" type="number" step="any" />
+    </div>
+    <div>
+        <label>Відсоток знижки:</label>
+        <input asp-for="DiscountPercent" type="number" step="any" />
+    </div>
+    <button type="submit">Розрахувати</button>
+</form>
+
+<div>
+    <h3>Підсумкова ціна: @Model.FinalPrice</h3>
+    <p>@Model.Message</p>
+</div>
